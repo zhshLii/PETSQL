@@ -5,8 +5,12 @@
 
 ## RUN
 ```bash
-docker pull zhishuailii/spider_envs:lastest
+docker pull zhishuailii/spider_envs:latest
+
 docker run --ipc=host -itd -v /your-local-path/PETSQL/src:/root/src -v /your-local-path/data:/root/data -v /your-local-path/test_database:/root/database --name spider_db_test_offline the-docker-iamge-ID
+# If you want to run it in current directory
+mkdir -p src data test_database && docker run --ipc=host -itd -v $(pwd)/src:/root/src -v $(pwd)/data:/root/data -v $(pwd)/test_database:/root/database --name spider_db_test_offline zhishuailii/spider_envs:latest
+
 docker exec -it spider_db_test_offline bash run_all.sh
 ```
 
