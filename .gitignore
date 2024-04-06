@@ -155,4 +155,4 @@ data_*.json
 sentence_transformers/
 data_*.json
 data/
-*.jsonl
+# *.jsonl
